@@ -1,0 +1,55 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.right=None
+        self.left=None
+    def addLeft(self,x):
+        self.left=Node(x)
+    def addRight(self,x):
+        self.right=Node(x)
+    def LNR(self,n):
+        if(n!=None):
+            self.LNR(n.left)
+            print(n.data)
+            self.LNR(n.right)
+    def LRN(self,n):
+        if (n!=None):
+            self.LRN(n.left)
+            self.LRN(n.right)
+            print(n.data)
+    def NLR(self,n):
+        if(n!=None):
+            print(n.data)
+            self.NLR(n.left)
+            self.NLR(n.right)
+#khai cau truc cay
+# n=Node(50)
+# n.addLeft(100)
+# n.left.addLeft(3)
+# n.left.addRight(5)
+# n.addRight(200)
+# n.right.addLeft(10)
+# n.right.addRight(20)
+n=Node(25)
+n.addLeft(10)
+n.left.addLeft(3)
+n.left.left.addLeft(1)
+n.left.left.addRight(6)
+n.left.left.right.addLeft(5)
+n.left.addRight(18)
+n.left.right.addLeft(12)
+n.left.right.left.addRight(13)
+n.left.right.addRight(20)
+n.addRight(37)
+n.right.addLeft(29)
+n.right.addRight(50)
+
+
+
+
+print("Duyet giua")
+n.LNR(n)
+print("Duyet sau")
+n.LRN(n)
+print("Duyet truoc")
+n.NLR(n)
