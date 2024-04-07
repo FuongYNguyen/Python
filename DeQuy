@@ -1,0 +1,8 @@
+def HN(a,b,c,n):
+    if(n==1):
+        print("chuyen dia",n,a,"=>",b)
+    else:
+        HN(a,c,b,n-1)
+        print("chuyen dia",n,a,"=>",b)
+        HN(c,b,a,n-1)
+HN("A","B","C",3)
